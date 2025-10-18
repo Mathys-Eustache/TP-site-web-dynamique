@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>StreetShop - Accueil</title>
+  <link rel="stylesheet" href="/Css/styles.css">
+</head>
+<body>
+ 
+
+  <header>
+  <nav class="nav-left">
+    <a href="/">Accueil</a>
+    <a href="/add">Add</a>
+  </nav>
+  <div class="logo">
+    <img src="/logo/logo.png" alt="StreetShop Logo">
+  </div>
+</header>
+
+  <h1>LES PRODUITS</h1>
+
+  <div class="products">
+    {{range .}}
+      <div class="card">
+        <img src="{{.Image}}" alt="{{.Name}}">
+        <h3>{{.Name}}</h3>
+        <p class="price">
+         {{if gt .Discount 0}}
+         <span class="old-price">{{.OldPrice}}€</span>
+    <span class="new-price">{{.Price}}€</span>
+    <span class="discount">Réduction -{{.Discount}}%</span>
+  {{else}}
+    <span>{{.Price}}€</span>
+  {{end}}
+</p>
+        <a class="btn" href="/product?id={{.ID}}">Consulter</a>
+      </div>
+    {{end}}
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter un produit</title>
+  <link rel="stylesheet" href="/Css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="nav-left">
+      <a href="/">Accueil</a>
+      <a href="/add">Ajouter un produit</a>
+    </nav>
+    <div class="logo">
+      <img src="/logo/logo.png" alt="StreetShop Logo">
+    </div>
+  </header>
+
+  <div class="form-container">
+    <h1>Ajouter un produit</h1>
+    <form action="/add/submit" method="post" class="form">
+      <label>Nom du produit :</label><br>
+      <input type="text" name="name" required><br><br>
+
+      <label>Prix (€) :</label><br>
+      <input type="number" name="price" required><br><br>
+
+      <label>Description :</label><br>
+      <textarea name="description" required></textarea><br><br>
+
+      <label>Tailles disponibles :</label><br>
+      <input type="text" name="sizes" placeholder="ex: S | M | L"><br><br>
+
+      <label>Image (choisir parmi les fichiers) :</label><br>
+      <select name="image" required>
+        <option value="hoodie1.webp">hoodie1.webp</option>
+        <option value="hoodie2.webp">hoodie2.webp</option>
+        <option value="hoodie3.webp">hoodie3.webp</option>
+        <option value="hoodie4.webp">hoodie4.webp</option>
+        <option value="sweetshirt.webp">sweetshirt.webp</option>
+        <option value="jeans1.webp">jeans1.webp</option>
+        <option value="cargo.webp">cargo.webp</option>
+      </select><br><br>
+
+      <button type="submit" class="btn">Ajouter</button>
+    </form>
+  </div>
+</body>
+</html>

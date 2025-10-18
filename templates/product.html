@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{.Name}}</title>
+  <link rel="stylesheet" href="/Css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="nav-left">
+      <a href="/">Accueil</a>
+      <a href="/add">Ajouter un produit</a>
+    </nav>
+    <div class="logo">
+      <img src="/logo/logo.png" alt="StreetShop Logo">
+    </div>
+  </header>
+
+  <!-- Carte produit -->
+  <div class="product-card">
+    <h1>{{.Name}}</h1>
+    <img src="{{.Image}}" alt="{{.Name}}">
+    <p class="description">{{.Description}}</p>
+
+    <p class="price">
+      {{if gt .Discount 0}}
+        <span class="old-price">{{.OldPrice}}€</span>
+        <span class="new-price">{{.Price}}€</span>
+        <span class="discount">Réduction -{{.Discount}}%</span>
+      {{else}}
+        <span>{{.Price}}€</span>
+      {{end}}
+    </p>
+
+    <p class="sizes">Tailles disponibles : {{.Sizes}}</p>
+
+  
+    <p class="stock">
+      {{if eq .Stock 0}}
+        <span class="out-of-stock">Rupture de stock</span>
+      {{else}}
+        <span class="in-stock">Stock disponible : {{.Stock}}</span>
+      {{end}}
+    </p>
+
+    <button class="btn">Ajouter au panier</button>
+  </div>
+</body>
+</html>
